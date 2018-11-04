@@ -7,12 +7,12 @@ function Header() {
     <Wrapper>
       <ul>
         <li>
-          <NavLink exact to="/">
+          <NavLink exact to="/dvss/">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/dvss/contact">Contact</NavLink>
         </li>
       </ul>
     </Wrapper>
