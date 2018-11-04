@@ -2,7 +2,7 @@
   "name": "dvss",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://fobossalmeron.github.io/dvss",
+  "homepage": "http://fobossalmeron.github.io/dvss/",
   "dependencies": {
     "@vx/axis": "^0.0.179",
     "@vx/event": "^0.0.179",
@@ -28,6 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,6 +42,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.8.0"
+    "babel-plugin-styled-components": "^1.8.0",
+    "gh-pages": "^2.0.1"
   }
 }
