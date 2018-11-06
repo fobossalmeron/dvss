@@ -19,9 +19,6 @@ class Home extends Component {
     };
     this.startCountDown = this.startCountDown.bind(this);
     this.tick = this.tick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleUpDownChange = this.handleUpDownChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   getBTCValue() {
@@ -63,20 +60,6 @@ class Home extends Component {
 
   componentWillUnmount() {
     clearInterval(this.intervalHandle);
-  }
-
-  handleChange(event) {
-    this.setState({ betSize: event.target.value });
-  }
-
-  handleUpDownChange(event) {
-    console.log(event);
-    this.setState({ upOrDown: event.target.value });
-  }
-
-  handleSubmit(event) {
-    alert("A name was submitted: " + this.state.betSize);
-    event.preventDefault();
   }
 
   render() {

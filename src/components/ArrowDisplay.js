@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import arrowSvg from "../img/arrow.svg";
+import equalSvg from "../img/equal.svg";
 import { connect } from "./store";
 
 const ArrowSquare = styled.div`
@@ -33,7 +34,7 @@ const Arrow = styled.div`
     props.upOrDown === "equal" &&
     css`
       background: gray;
-      content: "";
+      content: url(${equalSvg});
     `};
 `;
 
