@@ -6,8 +6,6 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Home from "./Home";
 import Contact from "./Contact";
 
-const playerBalance = 100
-
 function Container({ location }) {
   return (
     <Wrapper>
@@ -19,7 +17,7 @@ function Container({ location }) {
       >
         <section className="route-section">
           <Switch location={location}>
-            <Route exact path="/dvss/" render={()=><Home playerBalance={playerBalance}/>} />
+            <Route exact path="/dvss/" render={()=><Home/>} />
             <Route path="/dvss/contact" component={Contact} />
           </Switch>
         </section>
