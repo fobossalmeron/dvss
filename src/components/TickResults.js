@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, actions } from "./store";
+import { connect } from "./store";
 
 const TickResults = ({
   btc_current,

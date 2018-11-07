@@ -22,18 +22,18 @@ const Arrow = styled.div`
   ${props =>
     props.upOrDown === "up" &&
     css`
-      background: green;
+      background: lightgray;
     `};
   ${props =>
     props.upOrDown === "down" &&
     css`
-      background: red;
+      background: lightgray;
       transform: rotate(180deg);
     `};
   ${props =>
     props.upOrDown === "equal" &&
     css`
-      background: gray;
+      background: lightgray;
       content: url(${equalSvg});
     `};
 `;
@@ -42,17 +42,32 @@ const ArrowDisplay = ({
   valueWentUpOrDown,
   btc_current,
   btc_10_seconds_ago
-}) => (
-  btc_10_seconds_ago !== 0? 
-  <ArrowSquare>
-    <Arrow upOrDown={valueWentUpOrDown} />
-    {valueWentUpOrDown !== "" ? (
-      <p>
-        went from {btc_10_seconds_ago} to {btc_current}
-      </p>
-    ) : null}
-  </ArrowSquare> : null
-);
+}) => {
+  var change = ''
+  switch (valueWentUpOrDown){
+    default:
+    change = <p>went from {btc_10_seconds_ago} to {btc_current}</p>
+    break;
+    case "up":
+    change = <p>raised by {(btc_current - btc_10_seconds_ago).toFixed(2)}USD</p>
+    break;
+    case "down":
+    change = <p>fell by {(btc_10_seconds_ago - btc_current).toFixed(2)}USD</p>
+    break;
+    case "equal":
+    change = <p>stayed the same</p>
+    break;
+  }
+  return (
+    btc_10_seconds_ago !== 0? 
+    <ArrowSquare>
+      <Arrow upOrDown={valueWentUpOrDown} />
+      {valueWentUpOrDown !== "" ? (
+       change
+      ) : null}
+    </ArrowSquare> : null
+  )
+}
 
 export default connect(
   ({ valueWentUpOrDown, btc_current, btc_10_seconds_ago }) => ({

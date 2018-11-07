@@ -12,7 +12,6 @@
     "@vx/scale": "^0.0.179",
     "@vx/shape": "^0.0.179",
     "@vx/tooltip": "^0.0.179",
-    "bitcoinaverage": "^1.2.1",
     "bufferutil": "^4.0.0",
     "d3-array": "^1.2.4",
     "d3-time-format": "^2.1.3",

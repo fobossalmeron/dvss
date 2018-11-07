@@ -4,46 +4,40 @@ import BitcoinGraph from "./BitcoinGraph";
 import TickResults from "./TickResults";
 import ArrowDisplay from "./ArrowDisplay";
 import PlayerBalance from "./PlayerBalance";
+import Timer from "./Timer";
 import Bet from "./Bet";
-import { Provider, Consumer, actions, connect, subscribe } from "./store";
+
+import { Provider, actions, connect, subscribe } from "./store";
 
 subscribe((action, state) => console.log(action, state));
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      betSize: 100,
-      upOrDown: "down",
-      seconds: ""
-    };
+  constructor(props, state) {
+    super(props, state);
     this.startCountDown = this.startCountDown.bind(this);
     this.tick = this.tick.bind(this);
   }
 
   getBTCValue() {
-    actions.getBtc()
+    actions.getBtc();
   }
-  wentUpOrDown(){
-    actions.btcWentUpOrDown()
+  updateSeconds(value) {
+    actions.reduceSeconds(value);
+  }
+  turnBetOff() {
+    actions.betOff();
+  }
+  removeAnnouncement() {
+    actions.unannounce();
   }
 
   tick() {
     var sec = this.secondsRemaining;
-    this.setState({
-      seconds: sec
-    });
-    if (sec < 10) {
-      this.setState({
-        seconds: "0" + this.state.seconds
-      });
-    }
+    this.updateSeconds(sec);
     if (sec === 0) {
-      this.setState({
-        seconds: 10
-      });
+      this.getBTCValue();
+      this.updateSeconds(10);
       this.secondsRemaining = 10;
-      this.getBTCValue()
     }
     this.secondsRemaining--;
   }
@@ -56,7 +50,7 @@ class Home extends Component {
   componentDidMount = () => {
     this.startCountDown();
     this.getBTCValue();
-  }
+  };
 
   componentWillUnmount() {
     clearInterval(this.intervalHandle);
@@ -68,14 +62,14 @@ class Home extends Component {
         <Wrapper>
           <div className="title">dvss</div>
           <section>
-            <PlayerBalance/>
+            <PlayerBalance />
             <BitInfo>
               <BitcoinGraph width={300} heght={100} />
-              <Timer>{this.state.seconds}</Timer>
+              <Timer />
               <TickResults />
-              <ArrowDisplay/>
+              <ArrowDisplay />
             </BitInfo>
-            <Bet/>
+            <Bet />
           </section>
         </Wrapper>
       </Provider>
@@ -83,7 +77,7 @@ class Home extends Component {
   }
 }
 
-export default connect(({ actions }) => ({ actions }))(Home);
+export default connect(({ actions, state }) => ({ actions, state }))(Home);
 
 const Wrapper = styled.div`
   display: flex;
@@ -94,16 +88,3 @@ const Wrapper = styled.div`
 const BitInfo = styled.div`
   display: flex;
 `;
-const Timer = styled.div`
-  height: 150px;
-  width: 120px;
-  font-weight: 500;
-  font-size: 7rem;
-  margin-top: 2%;
-  margin-right: 2%;
-  padding: 0 2%;
-  color: white;
-  background: #4568dc;
-  background: linear-gradient(to left, #fbc2eb, #a6c1ee);
-`;
-
