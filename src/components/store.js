@@ -108,7 +108,6 @@ const store = {
 
             balance += parseFloat(bet.size);
             announcement = true;
-            console.log("You WON");
           } else if (upOrDown !== bet.direction) {
 
             var balanceForConsole2 = balance - parseFloat(bet.size)
@@ -119,7 +118,6 @@ const store = {
 
             balance -= parseFloat(bet.size);
             announcement = true;
-            console.log("You LOST");
 
             if (balance === 0) {
               betPossible = 0;
