@@ -42,9 +42,9 @@ const store = {
       secondsLeft: value
     }),
     betSize: ({ bet, playerBalance }, _a, event) => {
-      var actualSize = event;
+      var actualSize = parseFloat(event);
       if (event > playerBalance) {
-        actualSize = playerBalance;
+        actualSize = parseFloat(playerBalance);
       }
       return {
         bet: { size: actualSize, direction: bet.direction }
@@ -54,7 +54,7 @@ const store = {
       bet: { direction: event, size: bet.size }
     }),
     setPlayerBalance: ({ playerBalance }, _a, value) => ({
-      playerBalance: value
+      playerBalance: parseFloat(value)
     }),
     getBtc: async ({
       btc_current,
@@ -66,9 +66,9 @@ const store = {
       bet,
       betIsSet
     }) => {
-      var balance = playerBalance;
+      var balance = parseFloat(playerBalance);
       var announcement = announceResults;
-      var betPossible = bet.size;
+      var betPossible = parseFloat(bet.size);
 
       const response = await fetch(
         "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD"
@@ -86,16 +86,38 @@ const store = {
 
       if (betIsSet) {
         if (upOrDown === "equal") {
-          balance = playerBalance;
+
+          var balanceForConsole3 = parseFloat(playerBalance)
+          console.log("You bet: " + bet.direction + 
+                      " it went: " + upOrDown + 
+                      "\n So you TIED, your balance went from " + balance +
+                      " to " + balanceForConsole3)
+
+
+          balance = parseFloat(playerBalance);
           announcement = true;
           console.log("You TIED");
         } else {
           if (upOrDown === bet.direction) {
-            balance += bet.size;
+
+            var balanceForConsole = balance + parseFloat(bet.size)
+            console.log("You bet: " + bet.direction + 
+                        " it went: " + upOrDown + 
+                        "\n So you WON, your balance went from " + balance +
+                        " to " + balanceForConsole)
+
+            balance += parseFloat(bet.size);
             announcement = true;
             console.log("You WON");
           } else if (upOrDown !== bet.direction) {
-            balance -= bet.size;
+
+            var balanceForConsole2 = balance - parseFloat(bet.size)
+            console.log("You bet: " + bet.direction + 
+                        " it went: " + upOrDown + 
+                        "\n So you LOST, your balance went from " + balance +
+                        " to " + balanceForConsole2)
+
+            balance -= parseFloat(bet.size);
             announcement = true;
             console.log("You LOST");
 

@@ -1,7 +1,7 @@
 {
   "main.css": "/dvss/static/css/main.d47414d8.chunk.css",
-  "main.js": "/dvss/static/js/main.34f4f2fa.chunk.js",
-  "main.js.map": "/dvss/static/js/main.34f4f2fa.chunk.js.map",
+  "main.js": "/dvss/static/js/main.a8220c4c.chunk.js",
+  "main.js.map": "/dvss/static/js/main.a8220c4c.chunk.js.map",
   "static/js/1.0c4f8e91.chunk.js": "/dvss/static/js/1.0c4f8e91.chunk.js",
   "static/js/1.0c4f8e91.chunk.js.map": "/dvss/static/js/1.0c4f8e91.chunk.js.map",
   "runtime~main.js": "/dvss/static/js/runtime~main.7dafebfe.js",
@@ -10,6 +10,6 @@
   "static/media/arrow.svg": "/dvss/static/media/arrow.2fca6a89.svg",
   "static/media/equal.svg": "/dvss/static/media/equal.1325585e.svg",
   "index.html": "/dvss/index.html",
-  "precache-manifest.f6685d0ca6872672cb4cfd0c82eb9e7e.js": "/dvss/precache-manifest.f6685d0ca6872672cb4cfd0c82eb9e7e.js",
+  "precache-manifest.2f8ac2e7b98393b00a94b61c12d1d321.js": "/dvss/precache-manifest.2f8ac2e7b98393b00a94b61c12d1d321.js",
   "service-worker.js": "/dvss/service-worker.js"
 }
