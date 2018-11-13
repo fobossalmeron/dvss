@@ -32,9 +32,16 @@ const store = {
     unannounce: ({ announceResults }) => ({
       announceResults: false
     }),
-    betOn: ({ betIsSet }) => ({
-      betIsSet: true
-    }),
+    betOn: ({ betIsSet, bet, playerBalance }) => {
+      var isSet = true
+      if (bet.size > playerBalance) {
+        isSet = false;
+        window.confirm("You don't have enough funds, do you wish to top up?\n")
+      }
+      return {
+        betIsSet: isSet
+      }
+    },
     betOff: ({ betIsSet }) => ({
       betIsSet: false
     }),
@@ -43,8 +50,8 @@ const store = {
     }),
     betSize: ({ bet, playerBalance }, _a, event) => {
       var actualSize = parseFloat(event);
-      if (event > playerBalance) {
-        actualSize = parseFloat(playerBalance);
+      if (isNaN(actualSize)){
+        actualSize = 0;
       }
       return {
         bet: { size: actualSize, direction: bet.direction }
