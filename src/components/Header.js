@@ -23,6 +23,8 @@ const Wrapper = styled.div`
   height: 50px;
   display: flex;
   align-items: center;
+  position:fixed;
+  z-index: 10;
   ul {
     margin: 0;
     padding: 0;

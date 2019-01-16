@@ -1929,6 +1929,11 @@ binary-extensions@^1.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.12.0.tgz#c2d780f53d45bba8317a8902d4ceeaf3a6385b14"
   integrity sha512-DYWGk01lDcxeS/K9IHPGWfT8PsJmbXRtRd2Sx72Tnb8pcYZQFF1oSDb8hJtS1vhp212q1Rzi5dUf9+nq0o9UIg==
 
+bindall-standalone@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/bindall-standalone/-/bindall-standalone-1.0.5.tgz#f7430388f1c7f9a9ade0fc75a400e710f6692a1d"
+  integrity sha1-90MDiPHH+amt4Px1pADnEPZpKh0=
+
 block-stream@*:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/block-stream/-/block-stream-0.0.9.tgz#13ebfe778a03205cfe03751481ebb4b3300c126a"
@@ -3339,12 +3344,30 @@ doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
+"dom-classes@github:npm-dom/dom-classes":
+  version "1.0.0"
+  resolved "https://codeload.github.com/npm-dom/dom-classes/tar.gz/e6bdd52b7aaabb2420c8554e626ddcc924d750e1"
+  dependencies:
+    indexof "0.0.1"
+
 dom-converter@~0.2:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/dom-converter/-/dom-converter-0.2.0.tgz#6721a9daee2e293682955b6afe416771627bb768"
   integrity sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==
   dependencies:
     utila "~0.4"
+
+dom-create-element@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/dom-create-element/-/dom-create-element-1.0.2.tgz#9ec89ecb501a210487577e1e00cee0d4ec9b5c77"
+  integrity sha1-nsiey1AaIQSHV34eAM7g1OybXHc=
+
+dom-events@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/dom-events/-/dom-events-0.1.1.tgz#1d06598aec5cdd3d5dc30c7b30a857b0b174c987"
+  integrity sha1-HQZZiuxc3T1dwwx7MKhXsLF0yYc=
+  dependencies:
+    synthetic-dom-events "0.1.1"
 
 dom-helpers@^3.3.1:
   version "3.4.0"
@@ -6184,6 +6207,11 @@ left-pad@^1.3.0:
   resolved "https://registry.yarnpkg.com/left-pad/-/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
   integrity sha512-XI5MPzVNApjAyhQzphX8BkmKsKUxD4LdyK24iZeQGinBN9yTQT3bFlCBy/aVx2HrNcqQGsdot8ghrjyrvMCoEA==
 
+lethargy@^1.0.2:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/lethargy/-/lethargy-1.0.4.tgz#459dfc5aa49a10ef9056300b90ec03a88e3b98af"
+  integrity sha1-RZ38WqSaEO+QVjALkOwDqI47mK8=
+
 leven@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/leven/-/leven-2.1.0.tgz#c2e7a9f772094dee9d34202ae8acce4687875580"
@@ -8154,6 +8182,11 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.2, postcss@^7.0.5:
     source-map "^0.6.1"
     supports-color "^5.5.0"
 
+prefix@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/prefix/-/prefix-1.0.0.tgz#f12bcaea03e580be7929fb365c301184558a0356"
+  integrity sha1-8SvK6gPlgL55Kfs2XDARhFWKA1Y=
+
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -9330,6 +9363,17 @@ slice-ansi@1.0.0:
   dependencies:
     is-fullwidth-code-point "^2.0.0"
 
+smooth-scrolling@^2.3.11:
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/smooth-scrolling/-/smooth-scrolling-2.3.11.tgz#928dc6c2f94e3cd084b04f52e8c4d5c93774a6b5"
+  integrity sha1-ko3GwvlOPNCEsE9S6MTVyTd0prU=
+  dependencies:
+    dom-classes "github:npm-dom/dom-classes"
+    dom-create-element "^1.0.2"
+    dom-events "^0.1.1"
+    prefix "^1.0.0"
+    virtual-scroll "^1.2.1"
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -9804,6 +9848,11 @@ symbol-tree@^3.2.2:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
   integrity sha1-rifbOPZgp64uHDt9G8KQgZuFGeY=
 
+synthetic-dom-events@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/synthetic-dom-events/-/synthetic-dom-events-0.1.1.tgz#3a452a96e759c7a79a8a5a9252912f706e7b6d6f"
+  integrity sha1-OkUqludZx6eailqSUpEvcG57bW8=
+
 table@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/table/-/table-4.0.3.tgz#00b5e2b602f1794b9acaf9ca908a76386a7813bc"
@@ -9916,6 +9965,11 @@ timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
+
+tiny-emitter@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-1.2.0.tgz#6dc845052cb08ebefc1874723b58f24a648c3b6f"
+  integrity sha1-bchFBSywjr78GHRyO1jySmSMO28=
 
 tmp@^0.0.33:
   version "0.0.33"
@@ -10309,6 +10363,16 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+virtual-scroll@^1.2.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/virtual-scroll/-/virtual-scroll-1.3.1.tgz#7a6c0af991041bdfa14ea0a7919011575be60601"
+  integrity sha512-dC6ebVO0wyBugJbcBiicJdBla1v+6OTJGFP+UAh5N6Z6SMfGvXlKOAhm2mBQ/X2T5dOhlXs+/OlA9izY9MP9KA==
+  dependencies:
+    bindall-standalone "^1.0.5"
+    lethargy "^1.0.2"
+    object-assign "^4.0.1"
+    tiny-emitter "^1.0.0"
 
 vm-browserify@0.0.4:
   version "0.0.4"

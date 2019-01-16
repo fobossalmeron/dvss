@@ -6,6 +6,7 @@ import ArrowDisplay from "./ArrowDisplay";
 import PlayerBalance from "./PlayerBalance";
 import Timer from "./Timer";
 import Bet from "./Bet";
+import Smooth from "smooth-scrolling";
 
 import { Provider, actions, connect, subscribe } from "./store";
 
@@ -15,7 +16,15 @@ class Home extends Component {
   constructor(props, state) {
     super(props, state);
     this.startCountDown = this.startCountDown.bind(this);
+    this.someCallBack = this.someCallBack.bind(this);
     this.tick = this.tick.bind(this);
+    this.section = document.getElementById('#root');
+    this.smooth = new Smooth({
+      native: true,
+      noscrollbar: true,
+      section: this.section,
+      ease: 0.08
+    })
   }
 
   getBTCValue() {
@@ -47,13 +56,21 @@ class Home extends Component {
     this.intervalHandle = setInterval(this.tick, 1000);
   }
 
+  someCallBack(){
+    //this.smooth.init();
+  }
+
   componentDidMount = () => {
     this.startCountDown();
     this.getBTCValue();
+    this.someCallBack();
+    console.log("running smooth")
   };
 
   componentWillUnmount() {
     clearInterval(this.intervalHandle);
+    //this.smooth.destroy();
+    console.log("stop smooth")
   }
 
   render() {
@@ -61,7 +78,7 @@ class Home extends Component {
       <Provider>
         <Wrapper>
           <div className="title">dvss</div>
-          <section>
+          <section id="vs-material">
             <PlayerBalance />
             <BitInfo>
               <BitcoinGraph width={300} heght={100} />

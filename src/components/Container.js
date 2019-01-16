@@ -15,7 +15,7 @@ function Container({ location }) {
         timeout={{ enter: 425, exit: 175 }}
         classNames="fade"
       >
-        <section className="route-section">
+        <section className="route-section vs-material">
           <Switch location={location}>
             <Route exact path="/dvss/" render={()=><Home/>} />
             <Route path="/dvss/contact" component={Contact} />
@@ -28,7 +28,6 @@ function Container({ location }) {
 }
 
 const Wrapper = styled.div`
-  padding: 4%;
 
   .fade-enter {
     opacity: 0.01;
@@ -56,6 +55,8 @@ const Wrapper = styled.div`
   }
   section.route-section {
     position: absolute;
+    box-sizing: border-box;
+    padding: 10% 4% 4% 4%;
     width: 100%;
     top: 0;
     left: 0;
